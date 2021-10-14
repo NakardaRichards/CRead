@@ -22,7 +22,7 @@
           -->
           <section class="welcome-sect">
                <div class="welcome-div">
-                    <h1 class="w-text"><span>Welcome</span> to CLearn</h1>
+                    <h1 class="w-text"><span>Welcome</span> to CRead</h1>
                     <h2 style="font-weight: 500;">&lt;Insert-Catch-phrase-here&gt;</h2>
                </div>
                <div class="starter">
