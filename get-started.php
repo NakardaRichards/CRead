@@ -9,7 +9,7 @@
 
           <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
 
-          <title>CLearn | User Authentication Page</title>
+          <title>CRead | User Authentication Page</title>
      </head>
      <body>
           <section>

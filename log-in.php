@@ -17,7 +17,7 @@
                     display: inline;
                }
           </style>
-          <title>CLearn - Log-in Page</title>
+          <title>CRead - Log-in Page</title>
      </head>
      <body>
           <section>

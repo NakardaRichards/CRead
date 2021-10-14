@@ -7,12 +7,15 @@
           <link rel="stylesheet" href="./css/style.css">
           <link rel="stylesheet" href="./css/auth.css">
           
-          <title>CLearn - Log-in Page</title>
+          <title>CRead - Sign-up Page</title>
      </head>
      <body>
           <!-- 
                Need color indications of success/failure on each input field (sign-up/log-in)
                Need js rules on success/failure on each input validation.
+               Fix responsiveness
+               Add remember me functionality (maybe)
+               Add toggle for visibility in password fields (maybe)
           -->
           <section>
                <div class="form-cont">

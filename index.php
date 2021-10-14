@@ -7,7 +7,7 @@
           <link rel="stylesheet" href="./css/style.css">
           <link rel="stylesheet" href="./css/index.css">
           
-          <title>CLearn - A Website Dedicated to the Literacy of our Children</title>
+          <title>CRead - A Website Dedicated to the Literacy of our Children</title>
      </head>
      <body>
           <!-- 
@@ -18,6 +18,7 @@
                Need to edit home css
                Need to populate pages
                Need to start php coding
+               Add bootstrap (if necessary)
                Need to connect database of authentication
           -->
           <section class="welcome-sect">

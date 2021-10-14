@@ -6,7 +6,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="./css/style.css">
           <link rel="stylesheet" href="./css/home.css">
-          <title>CLearn - A Website Dedicated to the Literacy of our Children</title>
+          <title>CRead - A Website Dedicated to the Literacy of our Children</title>
      </head>
      <body>
           <nav>
