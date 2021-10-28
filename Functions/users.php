@@ -12,8 +12,7 @@
         private $database   = "cread";
         public  $con;
 
-        public function
-        __construct()
+        public function __construct()
         {
             $this->con = new mysqli($this->servername, $this->username, $this->password, $this->database);
             if (mysqli_connect_error()) {

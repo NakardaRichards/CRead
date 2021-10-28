@@ -24,14 +24,14 @@
           <section>
                <div class="form-cont">
                     <h2>Log In</h2>
-                    <form action="log-in.php" method="post">
+                    <form action="./functions/users.php" method="post">
                          <label name="email">Email Address</label>
                          <input type="email" name="email" placeholder="ex. jbrown@mail.com" required>
                          <br>
                          <label name="pwd">Password</label>
-                         <input type="password" name="pwd" placeholder="Use numbers and letters" required>
+                         <input type="password" name="pass" placeholder="Use numbers and letters" required>
                          <br>
-                         <div class="sub-btn" type="submit" name="login">Log In</div>
+                         <button class="sub-btn" type="submit" name="login">Log In</button>
                     </form>
                     <a href="./sign-up.php" class="switch-auth">You do not have an account?</a>
                </div>

@@ -24,7 +24,7 @@
      <body>
           <!-- 
                Need color indications of success/failure on each input field (sign-up/log-in)
-               Add remember me functionality (maybe)
+               Add 'remember me' functionality (maybe)
                JS to toggle visibility in password fields (maybe)
           -->
           <section>
@@ -33,7 +33,7 @@
                </nav> -->
                <div class="form-cont">
                     <h2>Sign Up</h2>
-                    <form action="sign-up.php" method="post">
+                    <form action="./functions/users.php" method="post">
                          <label name="fname">First Name</label>
                          <input type="text" name="fname" placeholder="ex. John" required>
                          <br>
@@ -44,12 +44,12 @@
                          <input type="email" name="email" placeholder="ex. jbrown@mail.com" required>
                          <br>
                          <label name="pwd">Password</label>
-                         <input type="password" name="pwd" placeholder="Use numbers and letters" required>
+                         <input type="password" name="pass" placeholder="Use numbers and letters" required>
                          <br>
                          <label name="cpwd">Confirm Password</label>
-                         <input type="password" name="cpwd" placeholder="Repeat your password" required>
+                         <input type="password" name="cpass" placeholder="Repeat your password" required>
                          <br>
-                         <div class="sub-btn" type="submit" name="signup">Sign Up</div>
+                         <button class="sub-btn" type="submit" name="signup">Sign Up</button>
                     </form>
                     <a href="./log-in.php" class="switch-auth">Already have an account?</a>
                </div>
