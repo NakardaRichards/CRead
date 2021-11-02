@@ -40,7 +40,7 @@ $usersObj = new Users();
 
         
         <p>
-            <a href="login.php" style="color: red;">
+            <a href="log-in.php" style="color: red;">
                 Click here to Logout
             </a>
 

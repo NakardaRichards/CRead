@@ -17,7 +17,7 @@
 
 
 
-    header("Location:Pages/landingpage.html");
+    header("Location:Pages/Homepage.html");
 
 
     ?>
