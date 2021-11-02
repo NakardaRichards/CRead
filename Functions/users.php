@@ -51,7 +51,7 @@ class Users
 
 
 
-            header("Location:dashboard.php");
+            header("Location:../dashboard/dashboard.php");
         } else {
             echo "Failed to signup!";
         }
@@ -78,7 +78,7 @@ class Users
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['fname'] . " " . $row['lname'];
             $_SESSION['class'] = $row['class'];
-            header("Location:dashboard.php");
+            header("Location:../dashboard/dashboard.php");
         } else {
             echo "Login failed!";
         }

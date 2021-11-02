@@ -67,7 +67,7 @@
 				<div class="box-wrapper">				
 					<div class="box box-border">
 						<div class="box-body">
-							 <h5 style="font-family: Noto Sans;">Welcome to </h5><h4 style="font-family: Noto Sans;text-align:center;">CREAD</h4><br>
+							 <h5 style="font-family: Noto Sans;">Welcome to </h5><h4 style="font-family: Noto Sans;text-align:center;">CRead</h4><br>
 							<form method="post" action="sign-up.php" enctype="multipart/form-data">
                                 <div class="form-group">
 									<label>Enter Your First Name:</label>
