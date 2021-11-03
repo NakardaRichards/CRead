@@ -1,7 +1,7 @@
 <?php
      session_id();
 
-     include 'C:\xampp\htdocs\FieldGroupProject\Functions\users.php';
+     include '..\Functions\users.php';
 
      $usersObj = new Users();
 
