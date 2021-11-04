@@ -1,10 +1,9 @@
 <?php
-include 'C:\xampp\htdocs\FieldGroupProject\Functions\users.php';
+    // PROBABLY SHOULD DELETE THIS PAGE
 
-$usersObj = new Users();
+    include '..\functions\users.php';
 
-
-
+    $usersObj = new Users();
 ?>
 
 <!DOCTYPE html>

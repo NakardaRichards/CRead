@@ -26,11 +26,8 @@
           <link rel="stylesheet" href="../scripts/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="../scripts/ionicons/css/ionicons.min.css">
 		<link rel="stylesheet" href="../css/form.css">
-    
           <link rel="stylesheet" href="style.css">
-        
           
-
           <title>CRead | LOGIN</title>
           <link rel="icon" href="transparent logo hd.png">
 
@@ -60,16 +57,14 @@
 				<div class="box-wrapper">				
 					<div class="box box-border">
 						<div class="box-body">
-						 <h5 style="font-family: Noto Sans;">Login to </h5><h4 style="font-family: Noto Sans;text-align:center;" >CRead</h4><br>
+						     <h5 style="font-family: Noto Sans;">Login to </h5><h4 style="font-family: Noto Sans;text-align:center;" >CRead</h4><br>
 							<form method="post" action="log-in.php" enctype="multipart/form-data">
 								<div class="form-group">
 									<label>Enter Your Email:</label>
 									<input type="email" name="email" class="form-control">
 								</div>
 								<div class="form-group">
-									<label class="fw">Enter Your Password:
-										
-									</label>
+									<label class="fw">Enter Your Password:</label>
 									<input type="password" name="pass" class="form-control">
 								</div> 
 								<div class="form-group text-right">

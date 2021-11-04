@@ -1,23 +1,13 @@
 <?php
-include '../Functions/users.php';
+    include '../Functions/users.php';
 
+    error_reporting(E_ERROR | E_PARSE);
+    $usersObj = new Users();
 
-error_reporting(E_ERROR | E_PARSE);
-$usersObj = new Users();
-
-
-
-if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
-    header("location: ../Pages/Homepage.html");
-    exit;
-}
-
-
-
-
-
-
-
+    if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
+        header("location: ../Pages/Homepage.html");
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +24,6 @@ if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
     <title> <?php echo $_SESSION['username'];
             echo "'s" ?> Dashboard</title>
 
- 
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -45,6 +34,4 @@ if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
 </head>
 
 <body id="page-top">
-
-    
     <div id="wrapper">
