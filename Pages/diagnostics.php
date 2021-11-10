@@ -301,7 +301,7 @@
                     <button class="sub-btn" onclick="submit('.send',choice)">Next</button>
                </div>
           </section>
-          <section class="send">
+          <section class="diag-test send">
                <div class="dia-div">
                     <h1>You have completed the Diagnostic Test</h1>
                     <p>Click continue to go to the main page</p>
