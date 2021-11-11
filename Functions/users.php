@@ -45,10 +45,13 @@ class Users
 
         $query = "INSERT INTO users(fname,lname,email,pass) VALUES('$fname','$lname','$email','$password')";
         $sql = $this->con->query($query);
+        $row = $sql->fetch_assoc();
 
         if ($sql == true) {
-            $_SESSION['username'] = $fname;
-
+            // $_SESSION['username'] = $fname;
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['username'] = $row['fname'] . " " . $row['lname'];
+            $_SESSION['class'] = $row['class'];
 
 
             header("Location:../dashboard/dashboard.php");

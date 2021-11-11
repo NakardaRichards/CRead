@@ -1,7 +1,7 @@
 <?php
      session_id();
 
-     include 'C:\xampp\htdocs\FieldGroupProject\Functions\users.php';
+     include '..\Functions\users.php';
 
      $usersObj = new Users();
 
@@ -25,25 +25,26 @@
           <link rel="stylesheet" href="../scripts/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="../scripts/ionicons/css/ionicons.min.css">
 		<link rel="stylesheet" href="../css/form.css">
-    
           <link rel="stylesheet" href="style.css">
-          <style type="text/css">
-            body{
-                  width: 100%;
-                  background: url("../img/book.png") ;
-                  background-position: center center;
-                  background-repeat: no-repeat;
-                  background-attachment: fixed;
-                  background-size: cover;
-                }
-          </style>
-          
-          <title>CRead | SIGN UP</title>
-          <link rel="icon" href="../img/Cread transparent.png">
 
+          <style type="text/css">
+               body{
+                    width: 100%;
+                    background: url("../img/book.png");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
+               }
+
+<<<<<<< HEAD
           <!--Additional Styles-->
           <style>
                body {
+=======
+               /* Additional Styles */
+               /* body {
+>>>>>>> b04612a13c675a92a595a0ef7b66ee4c7029516d
                     background: url("../img/bg1.png") !important;
                }
 
@@ -56,9 +57,10 @@
                     font-family: 'Montserrat', sans-serif;
                     font-size: normal;
                }
-               
           </style>
-
+          
+          <title>CRead | SIGN UP</title>
+          <link rel="icon" href="../img/Cread transparent.png">
      </head>
      <body>
           <!-- Sign up form -->
@@ -67,12 +69,16 @@
 				<div class="box-wrapper">				
 					<div class="box box-border">
 						<div class="box-body">
+<<<<<<< HEAD
                               <a href="../Pages/Homepage.html">
                                <img src="../img/Cread transparent.png" alt="CRead Logo" width="30%" height="30%" style="margin:20px;">
                               </a> 
                                <br>
+=======
+							<h5 style="font-family: Noto Sans;">Welcome to </h5><h4 style="font-family: Noto Sans;text-align:center;">CRead</h4><br>
+>>>>>>> b04612a13c675a92a595a0ef7b66ee4c7029516d
 							<form method="post" action="sign-up.php" enctype="multipart/form-data">
-                                <div class="form-group">
+                                        <div class="form-group">
 									<label>Enter Your First Name:</label>
 									<input type="text" name="fname" class="form-control" required />
 								</div>
@@ -87,9 +93,7 @@
 								<div class="form-group">
 									<label>Enter Your Password:</label>
 									<input type="password" name="pass" class="form-control" required />
-                                </div>
-								
-                                
+                                        </div>
 								<div class="form-group text-right">
 									<button class="btn btn-primary btn-block" name="submit1">Register</button>
 								</div>
@@ -105,6 +109,5 @@
 
 		<script src="js/jquery.js"></script>
 		<script src="scripts/bootstrap/bootstrap.min.js"></script>
-	</body>
      </body>
 </html>

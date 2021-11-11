@@ -1,0 +1,103 @@
+body{
+     font-size: 18px;
+     margin: 0;
+     background-color: rgba(147, 147, 253, 0.35);
+     color: black;
+}
+section{
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     display: flex;
+     position: relative;
+     width: 100%;
+     height: 100vh;
+     /* color: white; */
+}
+
+.diag-test{
+     display: none;
+}
+
+.dia-div{
+     text-align: center;
+}
+
+.starter{
+     display: flex;
+     align-items: center;
+     /* background: pink; */
+     height:8rem;
+}
+.start{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+     height: 3rem;
+     width: 6rem;
+     border-radius: 0.2rem;
+     color: white;
+     background: rgb(221, 0, 221);
+     border: none;
+     text-decoration: none;
+     cursor: pointer;
+     transition: 0.5s ease;
+     font-size: 1rem;
+     padding: 0 1rem;
+}
+.start:hover{
+     transition: 500ms ease;
+     background: rgb(255, 25, 121);
+}
+
+.dia-div input{
+     width: 1rem;
+     background: transparent;
+     border: none;
+     border-bottom: solid 1px black;
+}
+.sub-btn{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     
+     height: 2rem;
+     width: 4rem;
+     border-radius: 0.2rem;
+     color: white;
+     background: rgb(221, 0, 221);
+     border: none;
+     cursor: pointer;
+     transition: 0.5s ease;
+     font-size: 1rem;
+     padding: 0 1rem;
+}
+.sub-btn:hover{
+     transition: 500ms ease;
+     background: rgb(255, 25, 121);
+}
+
+select {
+     font-size: 1rem;
+     text-align: center;
+     border:none;
+     border-bottom: solid 1px black;
+     background: transparent;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
+}
+
+select #q6, select #q7{
+     width: 1.3rem;
+     height: 1rem;
+}
+
+input[name^='q']{
+     display: none;
+}
+button[name='send']{
+     display: none;
+}

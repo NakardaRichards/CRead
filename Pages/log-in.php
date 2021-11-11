@@ -1,7 +1,7 @@
 <?php
      session_id();
 
-     include 'C:\xampp\htdocs\FieldGroupProject\Functions\users.php';
+     include '..\Functions\users.php';
 
      $usersObj = new Users();
 
@@ -26,11 +26,8 @@
           <link rel="stylesheet" href="../scripts/bootstrap/bootstrap.min.css">
 		<link rel="stylesheet" href="../scripts/ionicons/css/ionicons.min.css">
 		<link rel="stylesheet" href="../css/form.css">
-    
           <link rel="stylesheet" href="style.css">
-        
           
-
           <title>CRead | LOGIN</title>
           <link rel="icon" href="transparent logo hd.png">
 
@@ -60,19 +57,21 @@
 				<div class="box-wrapper">				
 					<div class="box box-border">
 						<div class="box-body">
+<<<<<<< HEAD
                               <a href="../Pages/Homepage.html">
                                <img src="../img/Cread transparent.png" alt="CRead Logo" width="30%" height="30%" style="margin:20px;">
                               </a> 
                                <br>
+=======
+						     <h5 style="font-family: Noto Sans;">Login to </h5><h4 style="font-family: Noto Sans;text-align:center;" >CRead</h4><br>
+>>>>>>> b04612a13c675a92a595a0ef7b66ee4c7029516d
 							<form method="post" action="log-in.php" enctype="multipart/form-data">
 								<div class="form-group">
 									<label>Enter Your Email:</label>
 									<input type="email" name="email" class="form-control">
 								</div>
 								<div class="form-group">
-									<label class="fw">Enter Your Password:
-										
-									</label>
+									<label class="fw">Enter Your Password:</label>
 									<input type="password" name="pass" class="form-control">
 								</div> 
 								<div class="form-group text-right">

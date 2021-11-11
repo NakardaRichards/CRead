@@ -5,10 +5,8 @@
         <div >
             <img src="../img/Cread transparent.png" width="146px";>
         </div>
-       
     </a>
 
-
     <hr class="sidebar-divider my-0">
 
     <hr class="sidebar-divider my-0">
@@ -19,13 +17,6 @@
 
     <hr class="sidebar-divider">
 
-
-
-
-
-
-
-    
 </ul>
 
 <div id="content-wrapper" class="d-flex flex-column">
@@ -35,10 +26,6 @@
 
 
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-
-
-
 
 
             <ul class="navbar-nav ml-auto">
