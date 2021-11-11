@@ -51,3 +51,48 @@
      // questionid (same as question number)
      // correctanswer (answer(s) for the question)
      // ?givenanswer (answer(s) given by the user)
+     class diagnostic{
+
+          private $servername = "localhost";
+          private $username   = "root";
+          private $password   = "";
+          private $database   = "cread";
+          public  $con;
+
+
+          public function __construct()
+          {
+
+
+               $this->con = new mysqli($this->servername, $this->username, $this->password, $this->database);
+               if (mysqli_connect_error()) {
+                    trigger_error("Failed to connect to MySQL: " . mysqli_connect_errno());
+               } else {
+
+                    return $this->con;
+               }
+          }
+
+          public function diagnosis(){
+               $score=0;
+               for ($x = 1; $x <= 20; $x++) {
+                    $a = 'q'.$x;
+                    // $$a = strtolower($_POST['q'.$x]);
+                    $$a = strtolower($_POST[$a]);
+                    $query = "SELECT ans FROM diagnostics WHERE qid ='$x'";
+                    $sql = $this->con->query($query);
+                    $row = $sql->fetch_assoc();
+                    if($$a == $row['ans'] && $$a != NULL && $x != 5){
+                         $score+=1;
+                    }
+                    elseif($$a != NULL && $x == 5){
+                         $qArr = explode(' ', $row['ans']);
+                         if($$a[0]==$qArr[0] && $$a[2]==$qArr[1] && $$a[4]==$qArr[2]){
+                              $score+=1;
+                         }
+                    }
+               }
+               
+               echo "Score = ".$score;
+          }
+     }

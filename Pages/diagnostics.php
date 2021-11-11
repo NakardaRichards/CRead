@@ -1,3 +1,14 @@
+<?php
+     session_id();
+     include '../functions/diagnostic-verify.php';
+
+     $diagnose = new diagnostic();
+
+     if (isset($_POST['send'])) {
+          $diagnose->diagnosis();
+     }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
      <head>
@@ -307,8 +318,34 @@
                     <p>Click continue to go to the main page</p>
                </div>
                <div class="starter">
-                    <a href="../dashboard/Dashboard.php" class="start">Continue</a>
+                    <button class="start" name="finish" onclick="fSubmit()">Finish</button>
                </div>
+               <form method="post" action="./diagnostics.php" class="starter">
+                    <input type="text" name="q1" ><br>
+                    <input type="text" name="q2"><br>
+                    <input type="text" name="q3"><br>
+                    <input type="text" name="q4"><br>
+                    <input type="text" name="q5"><br>
+                    <input type="text" name="q6"><br>
+                    <input type="text" name="q7"><br>
+                    <input type="text" name="q8"><br>
+                    <input type="text" name="q9"><br>
+                    <input type="text" name="q10"><br>
+                    <input type="text" name="q11"><br>
+                    <input type="text" name="q12"><br>
+                    <input type="text" name="q13"><br>
+                    <input type="text" name="q14"><br>
+                    <input type="text" name="q15"><br>
+                    <input type="text" name="q16"><br>
+                    <input type="text" name="q17"><br>
+                    <input type="text" name="q18"><br>
+                    <input type="text" name="q19"><br>
+                    <input type="text" name="q20"> <br>
+                    <button class="start" name="send">Continue</button>
+               </form>
+               <!-- <div class="starter">
+                    <a href="../dashboard/Dashboard.php" class="start">Continue</a>
+               </div> -->
           </section>
      </body>
      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

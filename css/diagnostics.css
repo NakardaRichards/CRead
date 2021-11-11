@@ -94,3 +94,10 @@ select #q6, select #q7{
      width: 1.3rem;
      height: 1rem;
 }
+
+input[name^='q']{
+     display: none;
+}
+button[name='send']{
+     display: none;
+}

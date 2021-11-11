@@ -28,6 +28,16 @@ $('.selects').click(function(e){
      console.log(allChoice);
 });
 
+function fSubmit(){
+     for(let i = 0; i < ansArr.length; i++){
+          $('input[name="q'+(i+1)+'"]').val(ansArr[i]);
+          console.log($('input[name="q'+(i+1)+'"]').val());
+     }
+
+     $('button[name="finish"]').css('display','none');
+     $('button[name="send"]').css('display','flex');
+}
+
 
 
 
