@@ -1,11 +1,15 @@
 <?php
      session_id();
      include '../functions/diagnostic-verify.php';
+     include '../functions/users.php';
 
      $diagnose = new diagnostic();
+     $usersObj = new Users();
 
      if (isset($_POST['send'])) {
-          $diagnose->diagnosis();
+          $score = $diagnose->diagnosis();
+          $usersObj->diagTestStatus($score);
+          $diagnose -> chooseLesson($score);
      }
 ?>
 

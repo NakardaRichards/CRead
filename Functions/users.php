@@ -54,7 +54,8 @@ class Users
             $_SESSION['class'] = $row['class'];
 
 
-            header("Location:../dashboard/dashboard.php");
+            // header("Location:../dashboard/dashboard.php");
+            header("Location: ../pages/diagnostics.php");
         } else {
             echo "Failed to signup!";
         }
@@ -85,6 +86,16 @@ class Users
         } else {
             echo "Login failed!";
         }
+    }
+    
+    public function diagTestStatus($score){
+        $stid = $_SESSION['id'];
+        // $query = "SELECT * FROM users WHERE id = '$stid'";
+        // $result = $this->con->query($query);
+        // $row = $result->fetch_assoc();
+
+        $status = "INSERT INTO users(diagDone,diagTest) VALUES(true, '$score') WHERE id = '$stid'";
+        $sql = $this->con->query($status);
     }
 
 }

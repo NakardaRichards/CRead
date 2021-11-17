@@ -94,5 +94,18 @@
                }
                
                echo "Score = ".$score;
+               return $score;
+          }
+          public function chooseLesson($score){
+               if($score < 10){
+                    header("Location:../dashboard/dashboard.php?lesson=beginner");
+               }
+               elseif($score > 10 && $score < 15 ){
+                    header("Location:../dashboard/dashboard.php?lesson=intermediate");
+               }
+               elseif($score > 15){
+                    header("Location:../dashboard/dashboard.php?lesson=advanced");
+               }
+               // echo 'Final score is '.$score;
           }
      }
