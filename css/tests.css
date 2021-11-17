@@ -4,6 +4,7 @@ body{
      background-color: rgba(147, 147, 253, 0.35);
      color: black;
 }
+
 section{
      flex-direction: column;
      align-items: center;
@@ -15,19 +16,26 @@ section{
      /* color: white; */
 }
 
-.diag-test{
+.quiz{
      display: none;
 }
 
-.dia-div{
+.quiz-div{
      text-align: center;
+}
+
+.quiz-div input{
+     width: 1rem;
+     background: transparent;
+     border: none;
+     border-bottom: solid 1px black;
 }
 
 .starter{
      display: flex;
+     flex-direction: column;
      align-items: center;
-     /* background: pink; */
-     height:8rem;
+     height: 8rem;
 }
 .start{
      display: flex;
@@ -35,7 +43,8 @@ section{
      justify-content: center;
      
      height: 3rem;
-     width: 6rem;
+     min-width: 6rem;
+     max-width: fit-content;
      border-radius: 0.2rem;
      color: white;
      background: rgb(221, 0, 221);
@@ -50,6 +59,7 @@ section{
      transition: 500ms ease;
      background: rgb(255, 25, 121);
 }
+
 .skip{
      position: absolute;
      padding: 0.5rem 1rem;
@@ -67,12 +77,6 @@ section{
      color: black;
 }
 
-.dia-div input{
-     width: 1rem;
-     background: transparent;
-     border: none;
-     border-bottom: solid 1px black;
-}
 .sub-btn{
      display: flex;
      align-items: center;
@@ -97,12 +101,22 @@ section{
 .multiple{
      background: rgb(218, 218, 218);
 }
+
 .green-bg{
      background: rgb(148, 253, 148);
 }
 
+.final-stage{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     height:8rem;
+}
 select {
      font-size: 1rem;
+     min-width: 1.3rem;
+     height: 1rem;
      text-align: center;
      border:none;
      border-bottom: solid 1px black;
@@ -113,19 +127,15 @@ select {
      -ms-appearance: none;
 }
 
-select #q6, select #q7{
-     width: 1.3rem;
-     height: 1rem;
+.highlight{
+     font-weight: bold;
+}
+.underline{
+     text-decoration: underline;
 }
 
-.final-stage{
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     /* background: pink; */
-     height:8rem;
-}
+
+
 /* input[name^='q']{
      display: none;
 }

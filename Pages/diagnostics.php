@@ -1,18 +1,30 @@
 <?php
      session_id();
+
      include '../functions/diagnostic-verify.php';
      include '../functions/users.php';
 
      $diagnose = new diagnostic();
      $usersObj = new Users();
 
+     if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
+          header("location: ../Pages/Homepage.html");
+          exit;
+     }
+
      if (isset($_POST['send'])) {
           $score = $diagnose->diagnosis();
-          $usersObj->diagTestStatus($score);
+          // $score = $diagnose->diagnosis();
+          // $diagnose->diagTestStatus($score);
           $diagnose -> chooseLesson($score);
      }
 ?>
-
+<!-- 
+     color change on muliple selects class
+     text-hierarchy outline
+     decide color scheme
+     update dashboard announcement/showing of user level
+     -->
 <!DOCTYPE html>
 <html lang="en">
      <head>
@@ -41,6 +53,7 @@
                     <label>A</label> <input id="q1" type="text"> <label>C</label>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-2',$('#q1').val())">Next</button>
+                    <div class="skip" onclick="submit('.ques-2','')">Skip</div>
                </div>
           </section>
 
@@ -52,8 +65,8 @@
                     <br>
                     <input id="q2" type="text"> <label>M</label> <label>N</label>
                     <br>
-                    <!-- <button class="sub-btn" onclick="nextQ('ques-1')">Previous</button> -->
                     <button class="sub-btn" onclick="submit('.ques-3',$('#q2').val())">Next</button>
+                    <div class="skip" onclick="submit('.ques-3','')">Skip</div>
                </div>
           </section>
 
@@ -68,6 +81,7 @@
                     <button class="multiple choice" value="p">P</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-4',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-4','')">Skip</div>
                </div>
           </section>
 
@@ -81,15 +95,15 @@
                     <button class="multiple choice" value="y">Y</button>
                     <button class="multiple choice" value="z">Z</button>
                     <br>
-                    <!-- <button class="sub-btn" onclick="nextQ('ques-1')">Previous</button> -->
                     <button class="sub-btn" onclick="submit('.ques-5',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-5','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-5">
                <div class="dia-div">
                     <span>Question 5</span> 
                     <br> 
-                    Which letters in the word below are (select all that apply)? 
+                    <p>Which letters in the word below are vowels? <i>(Select all that apply)</i></p>   
                     <br>
                     <button class="multiple selects" value="g">G</button>
                     <button class="multiple selects" value="i">I</button>
@@ -99,8 +113,8 @@
                     <button class="multiple selects" value="f">F</button>
                     <button class="multiple selects" value="e">E</button>
                     <br>
-                    <!-- <button class="sub-btn" onclick="nextQ('ques-1')">Previous</button> -->
                     <button class="sub-btn" onclick="submit('.ques-6',allChoice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-6','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-6">
@@ -119,6 +133,7 @@
                     <label>E</label>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-7',$('#q6').val())">Next</button>
+                    <div class="skip" onclick="submit('.ques-7','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-7">
@@ -136,6 +151,7 @@
                     <label>H</label> <label>I</label> <label>P</label>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-8',$('#q7').val())">Next</button>
+                    <div class="skip" onclick="submit('.ques-8','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-8">
@@ -150,6 +166,7 @@
                     <button class="multiple choice" value="noun">Noun</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-9',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-9','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-9">
@@ -163,6 +180,7 @@
                     <button class="multiple choice" value="pronoun">Pronoun</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-10',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-10','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-10">
@@ -175,6 +193,7 @@
                     <button class="multiple choice" value="predicate">Predicate</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-11',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-11','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-11">
@@ -187,18 +206,20 @@
                     <button class="multiple choice" value="predicate">Predicate</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-12',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-12','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-12">
                <div class="dia-div">
                     <span>Question 12</span>
                     <br> 
-                    Is this a complete sentence? Running here and there
+                    <p>Is this a complete sentence? <br> Running here and there.</p>
                     <br>
                     <button class="multiple choice" value="yes">Yes</button>
                     <button class="multiple choice" value="no">No</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-13',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-13','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-13">
@@ -211,6 +232,7 @@
                     <button class="multiple choice" value="no">No</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-14',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-14','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-14">
@@ -224,6 +246,7 @@
                     <button class="multiple choice" value="personification">Personification</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-15',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-15','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-15">
@@ -237,6 +260,7 @@
                     <button class="multiple choice" value="metaphor">Metaphor</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-16',choice)">Next</button>
+                    <div class="skip" onclick="submit('.ques-16','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-16">
@@ -253,6 +277,7 @@
                     </select>
                     <label> beautiful dolls.</label>
                     <button class="sub-btn" onclick="submit('.ques-17',$('#q16').val())">Next</button>
+                    <div class="skip" onclick="submit('.ques-17','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-17">
@@ -269,6 +294,7 @@
                     </select>
                     <label> where the money is.</label>
                     <button class="sub-btn" onclick="submit('.ques-18',$('#q17').val())">Next</button>
+                    <div class="skip" onclick="submit('.ques-18','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-18">
@@ -285,6 +311,7 @@
                          <option value="?">?</option>
                     </select>
                     <button class="sub-btn" onclick="submit('.ques-19',$('#q18').val())">Next</button>
+                    <div class="skip" onclick="submit('.ques-19','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-19">
@@ -301,6 +328,7 @@
                          <option value="?">?</option>
                     </select>
                     <button class="sub-btn" onclick="submit('.ques-20',$('#q19').val())">Next</button>
+                    <div class="skip" onclick="submit('.ques-20','')">Skip</div>
                </div>
           </section>
           <section class="diag-test ques-20">
@@ -313,43 +341,59 @@
                     <button class="multiple choice" value="monday">Monday</button>
                     <button class="multiple choice" value="money">Money</button>
                     <br>
-                    <button class="sub-btn" onclick="submit('.send',choice)">Next</button>
+                    <button class="sub-btn" onclick="fSubmit('.send',choice)">Next</button>
+                    <div class="skip" onclick="fSubmit('.send','')">Skip</div>
                </div>
           </section>
           <section class="diag-test send">
-               <div class="dia-div">
-                    <h1>You have completed the Diagnostic Test</h1>
-                    <p>Click continue to go to the main page</p>
-               </div>
-               <div class="starter">
-                    <button class="start" name="finish" onclick="fSubmit()">Finish</button>
-               </div>
-               <form method="post" action="./diagnostics.php" class="starter">
-                    <input type="text" name="q1" ><br>
-                    <input type="text" name="q2"><br>
-                    <input type="text" name="q3"><br>
-                    <input type="text" name="q4"><br>
-                    <input type="text" name="q5"><br>
-                    <input type="text" name="q6"><br>
-                    <input type="text" name="q7"><br>
-                    <input type="text" name="q8"><br>
-                    <input type="text" name="q9"><br>
-                    <input type="text" name="q10"><br>
-                    <input type="text" name="q11"><br>
-                    <input type="text" name="q12"><br>
-                    <input type="text" name="q13"><br>
-                    <input type="text" name="q14"><br>
-                    <input type="text" name="q15"><br>
-                    <input type="text" name="q16"><br>
-                    <input type="text" name="q17"><br>
-                    <input type="text" name="q18"><br>
-                    <input type="text" name="q19"><br>
-                    <input type="text" name="q20"> <br>
+               <form method="post" action="./diagnostics.php" class="final-stage">
+                    <div class="dia-div">
+                         <h1>You have completed the Diagnostic Test</h1>
+                         <p>Click continue to go to the main page</p>
+                    </div>
+                    <div>
+                         <label for="">Question 1</label><input type="text" name="q1" >
+                         <label for="">Question 2</label><input type="text" name="q2">
+                    </div>
+                    <div>
+                         <label for="">Question 3</label><input type="text" name="q3">
+                         <label for="">Question 4</label><input type="text" name="q4">
+                    </div>
+                    <div>
+                         <label for="">Question 5</label><input type="text" name="q5">
+                         <label for="">Question 6</label><input type="text" name="q6">
+                    </div>
+                    <div>
+                         <label for="">Question 7</label><input type="text" name="q7">
+                         <label for="">Question 8</label><input type="text" name="q8">
+                    </div>
+                    <div>
+                         <label for="">Question 9</label><input type="text" name="q9">
+                         <label for="">Question 10</label><input type="text" name="q10">
+                    </div>
+                    <div>
+                         <label for="">Question 11</label><input type="text" name="q11">
+                         <label for="">Question 12</label><input type="text" name="q12">
+                    </div>
+                    <div>
+                         <label for="">Question 13</label><input type="text" name="q13">
+                         <label for="">Question 14</label><input type="text" name="q14">
+                    </div>
+                    <div>
+                         <label for="">Question 15</label><input type="text" name="q15">
+                         <label for="">Question 16</label><input type="text" name="q16">
+                    </div>
+                    <div>
+                         <label for="">Question 17</label><input type="text" name="q17">
+                         <label for="">Question 18</label><input type="text" name="q18">
+                    </div>
+                    <div>
+                         <label for="">Question 19</label><input type="text" name="q19">
+                         <label for="">Question 20</label><input type="text" name="q20">
+                    </div>
+                         
                     <button class="start" name="send">Continue</button>
                </form>
-               <!-- <div class="starter">
-                    <a href="../dashboard/Dashboard.php" class="start">Continue</a>
-               </div> -->
           </section>
      </body>
      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

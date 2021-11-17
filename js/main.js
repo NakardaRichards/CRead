@@ -15,32 +15,37 @@ function submit(x,y){
      nextQ(x);
      saveAns(y);
      console.log(ansArr);
+     allChoice = [];
 }
 
 $('.choice').click(function(e){
      choice = e.target.value;
      console.log(choice);
+     $('.choice').removeClass('green-bg');
+     $(this).addClass('green-bg');
 });
 
 $('.selects').click(function(e){
-     // create a deselect option
-     allChoice.push(e.target.value) ;
-     console.log(allChoice);
+     if($(this).hasClass('green-bg')){
+          allChoice = allChoice.filter(function(kick) {
+               return kick !== e.target.value;
+          })
+     }
+     else{
+          allChoice.push(e.target.value) ;
+          console.log(allChoice);
+     }
+     $(this).toggleClass('green-bg');
 });
 
-function fSubmit(){
+function fSubmit(x,y){
+     nextQ(x);
+     saveAns(y);
      for(let i = 0; i < ansArr.length; i++){
           $('input[name="q'+(i+1)+'"]').val(ansArr[i]);
           console.log($('input[name="q'+(i+1)+'"]').val());
      }
-
-     $('button[name="finish"]').css('display','none');
-     $('button[name="send"]').css('display','flex');
 }
-
-
-
-
 
 console.log(ansArr);
 
