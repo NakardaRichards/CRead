@@ -9,5 +9,5 @@ VALUES
      ('b'),('l'),('i'),('y'),('i a e'),
      ('d'),('c'),('adverb'),('pronoun'),
      ('subject'),('predicate'),('no'),
-     ('yes'),('metaphor'),('simile'),
+     ('yes'),('personification'),('simile'),
      ('have'),('know'),('?'),('!'),('monday');
