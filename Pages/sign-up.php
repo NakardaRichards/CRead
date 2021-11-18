@@ -37,14 +37,8 @@
                     background-size: cover;
                }
 
-<<<<<<< HEAD
-          <!--Additional Styles-->
-          <style>
-               body {
-=======
                /* Additional Styles */
-               /* body {
->>>>>>> b04612a13c675a92a595a0ef7b66ee4c7029516d
+               body {
                     background: url("../img/bg1.png") !important;
                }
 
@@ -63,20 +57,13 @@
           <link rel="icon" href="../img/Cread transparent.png">
      </head>
      <body>
-          <!-- Sign up form -->
+        
      	<section class="login first grey">
 			<div class="container">
 				<div class="box-wrapper">				
 					<div class="box box-border">
 						<div class="box-body">
-<<<<<<< HEAD
-                              <a href="../Pages/Homepage.html">
-                               <img src="../img/Cread transparent.png" alt="CRead Logo" width="30%" height="30%" style="margin:20px;">
-                              </a> 
-                               <br>
-=======
 							<h5 style="font-family: Noto Sans;">Welcome to </h5><h4 style="font-family: Noto Sans;text-align:center;">CRead</h4><br>
->>>>>>> b04612a13c675a92a595a0ef7b66ee4c7029516d
 							<form method="post" action="sign-up.php" enctype="multipart/form-data">
                                         <div class="form-group">
 									<label>Enter Your First Name:</label>

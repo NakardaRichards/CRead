@@ -1,6 +1,6 @@
  
 
-CREATE TABLE questions (
+CREATE TABLE diagnostic_questions (
   eid text NOT NULL,
   qid text NOT NULL,
   question text NOT NULL,

@@ -55,7 +55,7 @@ class Users
 
 
             // header("Location:../dashboard/dashboard.php");
-            header("Location: ../pages/diagnostics.php");
+            header("Location: ../Pages/diagnostics.php");
         } else {
             echo "Failed to signup!";
         }
