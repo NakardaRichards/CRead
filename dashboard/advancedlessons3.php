@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+        <!--Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap" rel="stylesheet">
+
+
+    <title>Advanced Lessons</title>
+</head>
+<body>
+<div id="navigationbar">
+        <!--Navigation Bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="../dashboard/Dashboard.php">
+              <img src="../img/Cread transparent.png" alt="CRead Logo" width="20%" height="20%">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                
+                
+                <a class="nav-link" href="../dashboard/advancedlessons.php">Lesson 1</a>
+                <a class="nav-link" href="../dashboard/advancedlessons2.php">Lesson 2</a>
+                <a class="nav-link" href="../dashboard/advancedlessons3.php">Lesson 3</a>
+               
+                
+               
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <br>
+      <div id="lesson_1" style=" text-align:center; ">
+    <h1 style="text-align: center;">Lesson 3: Contractions and Abbreviations</h1>
+    
+<iframe  width="400px" height="300px" style="border:2px solid red; margin:15px; margin-top:50px" src="https://www.youtube.com/embed/vnB4Eu7X1Qg" title="Lesson 2: Punctuations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe  width="400px" height="300px" style="border:2px solid red; margin:15px; margin-top:50px" src="https://www.youtube.com/embed/M-6OVp5p9Y8" title="Lesson 2: Punctuations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       
+        <iframe  width="400px" height="300px" style="border:2px solid red; margin:15px; margin-top:80px" src="https://www.youtube.com/embed/q6J6wf_iEpw" title="Lesson 2: Punctuations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       
+
+    
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

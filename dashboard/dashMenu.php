@@ -17,6 +17,70 @@
 
     <hr class="sidebar-divider">
 
+    
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Lessons</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+                <a class="collapse-item" href="../dashboard/beginnerlessons.php">Beginner Lessons</a>
+                <a class="collapse-item" href="../dashboard/intermediatelessons.php">Intermediate Lessons</a>
+                <a class="collapse-item" href="../dashboard/advancedlessons.php">Advanced Lessons</a>
+                <div class="collapse-divider"></div>
+
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-check"></i>
+            <span>Tests</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+                <a class="collapse-item" href="#">Beginner Tests</a>
+                <a class="collapse-item" href="#">Intermediate Tests</a>
+                <a class="collapse-item" href="#">Advanced Tests</a>
+                <div class="collapse-divider"></div>
+
+              
+            </div>
+        </div>
+    </li>
+
+    <div>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <i class="fas fa-fw fa-archive"></i>
+            <span>Supplementary Content</span>
+        </a>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+            <a class="collapse-item" href="../Supplemental Material Page/smaterial.html">Content</a>
+               
+        
+                <div class="collapse-divider"></div>
+
+            </div>
+        </div>
+    </li>
+</div>
+
+   
+
+
+    <hr class="sidebar-divider">
+
+
+
+
+
 </ul>
 
 <div id="content-wrapper" class="d-flex flex-column">
