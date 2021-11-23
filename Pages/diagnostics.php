@@ -14,8 +14,6 @@
 
      if (isset($_POST['send'])) {
           $score = $diagnose->diagnosis();
-          // $score = $diagnose->diagnosis();
-          // $diagnose->diagTestStatus($score);
           $diagnose -> chooseLesson($score);
      }
 ?>

@@ -45,7 +45,10 @@ class Users
 
         $query = "INSERT INTO users(fname,lname,email,pass) VALUES('$fname','$lname','$email','$password')";
         $sql = $this->con->query($query);
-        $row = $sql->fetch_assoc();
+
+        $showQuery = "SELECT * FROM users WHERE email ='$email' && pass ='$password'";
+        $newsql = $this->con->query($showQuery);
+        $row = $newsql->fetch_assoc();
 
         if ($sql == true) {
             // $_SESSION['username'] = $fname;
@@ -87,15 +90,4 @@ class Users
             echo "Login failed!";
         }
     }
-    
-    public function diagTestStatus($score){
-        $stid = $_SESSION['id'];
-        // $query = "SELECT * FROM users WHERE id = '$stid'";
-        // $result = $this->con->query($query);
-        // $row = $result->fetch_assoc();
-
-        $status = "INSERT INTO users(diagDone,diagTest) VALUES(true, '$score') WHERE id = '$stid'";
-        $sql = $this->con->query($status);
-    }
-
 }
