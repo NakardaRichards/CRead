@@ -1,18 +1,15 @@
  <!-- Footer -->
- <footer class="sticky-footer bg-white" style=" margin-top: 48%">
-     <div class="container my-auto">
-         <div   class="copyright text-center my-auto">
-             <span>Copyright &copy; CRead <script>
-                     document.write(new Date().getFullYear());
-                 </script></span>
-         </div>
-     </div>
- </footer>
-
- </div>
-
-
- </div>
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div   class="copyright text-center my-auto">
+                    <span>Copyright &copy; CRead <script>
+                            document.write(new Date().getFullYear());
+                        </script></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
 
  <a class="scroll-to-top rounded" href="#page-top">
      <i class="fas fa-angle-up"></i>

@@ -21,10 +21,16 @@
           private $password   = "";
           private $database   = "cread";
           public  $con;
-
+          // include some variables here for the userProgress section
+          // public $testAccPoints;
+          // public $userAccPoints;
+          // public $userLevel;
+          // public $userLesson;
+          // public $userProgress;
 
           public function __construct()
           {
+               // $this->userProgress = array();
                $this->con = new mysqli($this->servername, $this->username, $this->password, $this->database);
                if (mysqli_connect_error()) {
                     trigger_error("Failed to connect to MySQL: " . mysqli_connect_errno());
@@ -178,5 +184,106 @@
                }
                echo "Score = ".$score;
                return $score;
+          }
+
+          // public function userProgress($request){
+          public function userProgress(){
+               // Select * from user of current session
+               $stid = $_SESSION['id'];
+               $query = "SELECT * FROM users WHERE id = '$stid'";
+               $sql = $this->con->query($query);
+               $row = $sql->fetch_assoc();
+
+               // Determine the level and lesson the person should be at. Give a link to the lesson
+               // if(){
+
+               // }
+               // Determine the number of points accumulated (and the success percentage thus far)
+               $testAccPoints=0;
+               $userAccPoints=0;
+               if(!$row['beg1']){
+                    $userLevel='Beginner';
+                    $userLesson='Your Current Lesson is <span class="highlight">1</span> <br><br><a class="go-to-lesson" href="../dashboard/beginnerlessons.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['beg1'];
+               }
+               if($row['beg1']){
+                    $userLevel='Beginner';
+                    $userLesson='Your Current Lesson is <span class="highlight">2</span> <br><br><a class="go-to-lesson" href="../dashboard/beginnerlessons2.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['beg1'];
+               }
+               if($row['beg2']){
+                    $userLevel='Beginner ';
+                    $userLesson='Your Current Lesson is <span class="highlight">3</span> <br><br><a class="go-to-lesson" href="../dashboard/beginnerlessons3.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['beg2'];
+               }
+               if($row['beg3']){
+                    $userLevel='Intermediate ';
+                    $userLesson='Your Current Lesson is <span class="highlight">1</span> <br><br><a class="go-to-lesson" href="../dashboard/intermediatelessons.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['beg3'];
+               }
+               if($row['interm1']){
+                    $userLevel='Intermediate ';
+                    $userLesson='Your Current Lesson is <span class="highlight">2</span> <br><br><a class="go-to-lesson" href="../dashboard/intermediatelessons2.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['interm1'];
+               }
+               if($row['interm2']){
+                    $userLevel='Intermediate ';
+                    $userLesson='Your Current Lesson is <span class="highlight">3</span> <br><br><a class="go-to-lesson" href="../dashboard/intermediatelessons3.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['interm2'];
+               }
+               if($row['interm3']){
+                    $userLevel='Advanced ';
+                    $userLesson='Your Current Lesson is <span class="highlight">1</span> <br><br><a class="go-to-class" href="../dashboard/advancedlessons.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['interm3'];
+               }
+               if($row['adv1']){
+                    $userLevel='Advanced ';
+                    $userLesson='Your Current Lesson is <span class="highlight">2</span> <br><br><a class="go-to-class" href="../dashboard/advancedlessons2.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['adv1'];
+               }
+               if($row['adv2']){
+                    $userLevel='Advanced ';
+                    $userLesson='Your Current Lesson is <span class="highlight">3</span> <br><br><a class="go-to-class" href="../dashboard/advancedlessons3.php">Go To Lesson</a>';
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['adv2'];
+               }
+               if($row['adv3']){
+                    $userLevel='Advanced ';
+                    $userLesson='You have completed the Course!'; // <br><a class="go-to-class" href="../dashboard/advancedlessons.php">Collect Certficate</a>
+                    $testAccPoints+=10;
+                    $userAccPoints+=$row['adv3'];
+               }
+               // echo $testAccPoints.' '.$userAccPoints;
+               
+               $userProgress = array();
+               array_push($userProgress, $userLevel);
+               array_push($userProgress, $userLesson);
+               array_push($userProgress, $userAccPoints);
+               array_push($userProgress, $testAccPoints);
+               $percentage = round(($userProgress[2]/$userProgress[3])*100);
+               array_push($userProgress, $percentage);
+               array_push($userProgress, $row['beg1']);
+               array_push($userProgress, $row['beg2']);
+               array_push($userProgress, $row['beg3']);
+               array_push($userProgress, $row['interm1']);
+               array_push($userProgress, $row['interm2']);
+               array_push($userProgress, $row['interm3']);
+               array_push($userProgress, $row['adv1']);
+               array_push($userProgress, $row['adv2']);
+               array_push($userProgress, $row['adv3']);
+               // Determine the progression of the person throughout the entire course
+               // if(){
+                    
+               // }
+
+               return $userProgress;
           }
      }
