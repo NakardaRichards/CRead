@@ -51,27 +51,14 @@ if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
                 <div style="height: 100%; width:100%; padding-top: 0.5rem;">
                     <ul class="bars-cont">
                         <!-- Temporary fix for % overlaying the graph footers for low percentages -->
-                        <!-- Maybe swith from 'lesson grades' to 'level grades' -->
-                        <li style="height: <?php echo $progress[5]/10*100;?>%;"><p><?php if($progress[5]) echo ($progress[5]/10)*100 .'%';?></p></li> 
-                        <li style="height: <?php echo $progress[6]/10*100;?>%;"><p><?php if($progress[6]) echo ($progress[6]/10)*100 .'%';?></p></li>
-                        <li style="height: <?php echo $progress[7]/10*100;?>%;"><p><?php if($progress[7]) echo ($progress[7]/10)*100 .'%';?></p></li>
-                        <li style="height: <?php echo $progress[8]/10*100;?>%;"><p><?php if($progress[8]) echo ($progress[8]/10)*100 .'%';?></p></li>
-                        <li style="height: <?php echo $progress[9]/10*100;?>%;"><p><?php if($progress[9]) echo ($progress[9]/10)*100 .'%';?></p></li>
-                        <li style="height: <?php echo $progress[10]/10*100;?>%;"><p><?php if($progress[10]) echo ($progress[10]/10)*100 .'%';?></p></li>
-                        <li style="height: <?php echo $progress[11]/10*100;?>%;"><p><?php if($progress[11]) echo ($progress[11]/10)*100 .'%';?></p></li>
-                        <li style="height: <?php echo $progress[12]/10*100;?>%;"><p><?php if($progress[12]) echo ($progress[12]/10)*100 .'%';?></p></li>
-                        <li style="height: <?php echo $progress[13]/10*100;?>%;"><p><?php if($progress[13]) echo ($progress[13]/10)*100 . '%';?></p></li>
+                        <li style="height: <?php echo ($progress[5]+$progress[6]+$progress[7])/30*100;?>%;"></li> 
+                        <li style="height: <?php echo ($progress[8]+$progress[9]+$progress[10])/30*100;?>%;"></li>
+                        <li style="height: <?php echo ($progress[11]+$progress[12]+$progress[13])/10*100;?>%;"></li>
                     </ul>
                     <ul class="tests-cont">
-                        <li>B1</li>
-                        <li>B2</li>
-                        <li>B3</li>
-                        <li>I1</li>
-                        <li>I2</li>
-                        <li>I3</li>
-                        <li>A1</li>
-                        <li>A2</li>
-                        <li>A3</li>
+                        <li><?php echo round((($progress[5]+$progress[6]+$progress[7])/30)*100) .'%';?><br>Beginner</li>
+                        <li><?php echo round((($progress[8]+$progress[9]+$progress[10])/30)*100) .'%';?><br>Intermediate</li>
+                        <li><?php echo round((($progress[11]+$progress[12]+$progress[13])/10)*100) .'%';?><br>Advanced</li>
                     </ul>
                     
                 </div>

@@ -94,8 +94,7 @@ svg circle:nth-child(2){
 }
 
 .bars-cont{
-     /* background-color: orange; */
-     height: 90%;
+     height: 83%;
      min-width: 100%;
      display: flex;
      justify-content: space-around;
@@ -113,7 +112,7 @@ svg circle:nth-child(2){
 }
 .tests-cont{
      /* background-color: purple; */
-     height: 10%;
+     height: 17%;
      min-width: 100%;
      display: flex;
      justify-content: space-around;

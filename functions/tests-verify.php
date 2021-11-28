@@ -42,6 +42,7 @@
 
           public function test(){
                $score=0;
+               $testResult = array();
 
                for ($x = 1; $x <= 10; $x++) {
                     $a = 'q'.$x;
@@ -59,7 +60,12 @@
                          $row = $sql->fetch_assoc();
                          if($$a == $row['test1'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test1']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET beg1 = '$score' WHERE id = '$stid'";
@@ -77,11 +83,20 @@
                               foreach($$a as $val){
                                    if(in_array($val,$qArr)) $check++;
                               }
-                              if($check == count($qArr)) $score+=1;
+                              if($check == count($qArr)){
+                                   $score+=1;
+                                   array_push($testResult,1);
+                              } 
+                              
                          }
                          elseif($$a == $row['test2'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test2']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET beg2 = '$score' WHERE id = '$stid'";
@@ -94,7 +109,12 @@
                          $row = $sql->fetch_assoc();
                          if($$a == $row['test3'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test3']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET beg3 = '$score' WHERE id = '$stid'";
@@ -108,7 +128,12 @@
                          $row = $sql->fetch_assoc();
                          if($$a == $row['test1'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test1']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET interm1 = '$score' WHERE id = '$stid'";
@@ -121,7 +146,12 @@
                          $row = $sql->fetch_assoc();
                          if($$a == $row['test2'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test2']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET interm2 = '$score' WHERE id = '$stid'";
@@ -134,7 +164,12 @@
                          $row = $sql->fetch_assoc();
                          if($$a == $row['test3'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test3']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET interm3 = '$score' WHERE id = '$stid'";
@@ -148,7 +183,12 @@
                          $row = $sql->fetch_assoc();
                          if($$a == $row['test1'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test1']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET adv1 = '$score' WHERE id = '$stid'";
@@ -161,7 +201,12 @@
                          $row = $sql->fetch_assoc();
                          if($$a == $row['test2'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test2']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET adv2 = '$score' WHERE id = '$stid'";
@@ -174,7 +219,12 @@
                          $row = $sql->fetch_assoc();
                          if($$a == $row['test3'] && $$a != NULL){
                               $score+=1;
+                              array_push($testResult,1);
                          }
+                         else{
+                              array_push($testResult,0);
+                         }
+                         array_push($testResult,$row['test3']);
                          if($x >= 10){
                               $stid = $_SESSION['id'];
                               $userScore = "UPDATE users SET adv3 = '$score' WHERE id = '$stid'";
@@ -182,8 +232,9 @@
                          }
                     }
                }
-               echo "Score = ".$score;
-               return $score;
+               // echo "Score = ".$score;
+               array_push($testResult,$score);
+               return $testResult;
           }
 
           // public function userProgress($request){
@@ -195,45 +246,44 @@
                $row = $sql->fetch_assoc();
 
                // Determine the level and lesson the person should be at. Give a link to the lesson
-               // if(){
-
-               // }
                // Determine the number of points accumulated (and the success percentage thus far)
+               // Determine the progression of the person throughout the entire course
+
                $testAccPoints=0;
                $userAccPoints=0;
                if(!$row['beg1']){
                     $userLevel='Beginner';
-                    $userLesson='Your Current Lesson is <span class="highlight">1</span> <br><br><a class="go-to-lesson" href="../dashboard/beginnerlessons.php">Go To Lesson</a>';
+                    $userLesson='Your Current Lesson is <span class="highlight">1</span> <br><br><a class="go-to-class" href="../dashboard/beginnerlessons.php">Go To Lesson</a>';
                     $testAccPoints+=10;
                     $userAccPoints+=$row['beg1'];
                }
                if($row['beg1']){
                     $userLevel='Beginner';
-                    $userLesson='Your Current Lesson is <span class="highlight">2</span> <br><br><a class="go-to-lesson" href="../dashboard/beginnerlessons2.php">Go To Lesson</a>';
+                    $userLesson='Your Current Lesson is <span class="highlight">2</span> <br><br><a class="go-to-class" href="../dashboard/beginnerlessons2.php">Go To Lesson</a>';
                     $testAccPoints+=10;
                     $userAccPoints+=$row['beg1'];
                }
                if($row['beg2']){
                     $userLevel='Beginner ';
-                    $userLesson='Your Current Lesson is <span class="highlight">3</span> <br><br><a class="go-to-lesson" href="../dashboard/beginnerlessons3.php">Go To Lesson</a>';
+                    $userLesson='Your Current Lesson is <span class="highlight">3</span> <br><br><a class="go-to-class" href="../dashboard/beginnerlessons3.php">Go To Lesson</a>';
                     $testAccPoints+=10;
                     $userAccPoints+=$row['beg2'];
                }
                if($row['beg3']){
                     $userLevel='Intermediate ';
-                    $userLesson='Your Current Lesson is <span class="highlight">1</span> <br><br><a class="go-to-lesson" href="../dashboard/intermediatelessons.php">Go To Lesson</a>';
+                    $userLesson='Your Current Lesson is <span class="highlight">1</span> <br><br><a class="go-to-class" href="../dashboard/intermediatelessons.php">Go To Lesson</a>';
                     $testAccPoints+=10;
                     $userAccPoints+=$row['beg3'];
                }
                if($row['interm1']){
                     $userLevel='Intermediate ';
-                    $userLesson='Your Current Lesson is <span class="highlight">2</span> <br><br><a class="go-to-lesson" href="../dashboard/intermediatelessons2.php">Go To Lesson</a>';
+                    $userLesson='Your Current Lesson is <span class="highlight">2</span> <br><br><a class="go-to-class" href="../dashboard/intermediatelessons2.php">Go To Lesson</a>';
                     $testAccPoints+=10;
                     $userAccPoints+=$row['interm1'];
                }
                if($row['interm2']){
                     $userLevel='Intermediate ';
-                    $userLesson='Your Current Lesson is <span class="highlight">3</span> <br><br><a class="go-to-lesson" href="../dashboard/intermediatelessons3.php">Go To Lesson</a>';
+                    $userLesson='Your Current Lesson is <span class="highlight">3</span> <br><br><a class="go-to-class" href="../dashboard/intermediatelessons3.php">Go To Lesson</a>';
                     $testAccPoints+=10;
                     $userAccPoints+=$row['interm2'];
                }
@@ -279,11 +329,7 @@
                array_push($userProgress, $row['adv1']);
                array_push($userProgress, $row['adv2']);
                array_push($userProgress, $row['adv3']);
-               // Determine the progression of the person throughout the entire course
-               // if(){
-                    
-               // }
-
+               
                return $userProgress;
           }
      }

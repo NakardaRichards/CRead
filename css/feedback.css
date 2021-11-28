@@ -1,0 +1,70 @@
+body{
+     font-size: 18px;
+     margin: 0;
+     background-color: rgba(147, 147, 253, 0.35);
+     color: black;
+}
+section{
+     margin: 1rem 5%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     /* background: pink; */
+     position: relative;
+     padding: 0.5rem 0;
+     /* width: calc(90% - 1rem); */
+     width: 90%;
+     border-radius: 1rem;
+}
+.success{
+     background: #96ff9690;
+}
+.failure{
+     background: #ff969690;
+}
+.answer-cont{
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     /* margin: 0 1%; */
+     width: 100%;
+}
+.answer-cont div{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+.answer-cont div p{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.highlight{
+     color:#ff00c8;
+     font-weight: bold;
+     font-size: 1.2rem;
+}
+
+.user-route{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.go-to-class{
+     margin: 2rem;
+     text-decoration: none;
+     border-radius: 10px;
+     color: white;
+     padding: 0.5rem;
+     background: #ff00c8;
+     transition: 0.5s ease;
+}
+.go-to-class:hover{
+     text-decoration: none;
+     color: inherit;
+     background: cyan;
+     transition: 0.5s ease;
+}
