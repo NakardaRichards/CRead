@@ -14,8 +14,6 @@
 
      
      $testResult = $tests->test();
-     // $usersObj->diagTestStatus($score);
-     // $diagnose -> chooseLesson($score);
      $nextLesson;
      $sameLesson;
      $thisTest;
@@ -74,7 +72,6 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <!-- <link rel="stylesheet" href="../css/tests.css"> -->
      <link rel="stylesheet" href="../css/feedback.css">
      <title>CRead - Test Feedback</title>
 </head>
@@ -345,6 +342,7 @@
                     }
                     elseif($testResult[20] < 5){
                          echo 'Nice try <span class="highlight">'.$_SESSION['username'].'</span>.<br>Sadly you were unable to pass the test for this lesson. Please return to this lesson and try this test once more.';
+                         $nextPage = $sameLesson;
                     }
                ?>
           </div>

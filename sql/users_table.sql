@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-CREATE TABLE users ( 
-	id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-	fname varchar(100) NOT NULL, 
-    lname varchar(100) NOT NULL, 
-	email varchar(100) NOT NULL, 
-	pass varchar(100) NOT NULL
-
-) 
-=======
 -- If you are just setting up the database, use this create table query
 
 CREATE TABLE users (
@@ -47,4 +37,3 @@ CREATE TABLE users (
 -- ADD COLUMN adv1 tinyint(3),
 -- ADD COLUMN adv2 tinyint(3),
 -- ADD COLUMN adv3 tinyint(3);
->>>>>>> 3602ae0b397a9b64f56df2b55a8970d1c4ea4546

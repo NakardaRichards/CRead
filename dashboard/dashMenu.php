@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-green-primary sidebar sidebar-dark accordion" style="background-color:grey" id="accordionSidebar">
 
 
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../Pages/Homepage.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../dashboard/Dashboard.php">
         <div >
             <img src="../img/Cread transparent.png" width="146px";>
         </div>
@@ -21,14 +21,12 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-book"></i>
-            <span>Lessons</span>
+            <span>Contact Us</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-                <a class="collapse-item" href="../dashboard/beginnerlessons.php">Beginner Lessons</a>
-                <a class="collapse-item" href="../dashboard/intermediatelessons.php">Intermediate Lessons</a>
-                <a class="collapse-item" href="../dashboard/advancedlessons.php">Advanced Lessons</a>
+                <a class="collapse-item" href="../pages/contact.html">Contact Page</a>
                 <div class="collapse-divider"></div>
 
             </div>
@@ -38,14 +36,12 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-check"></i>
-            <span>Tests</span>
+            <span>About Us</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-                <a class="collapse-item" href="#">Beginner Tests</a>
-                <a class="collapse-item" href="#">Intermediate Tests</a>
-                <a class="collapse-item" href="#">Advanced Tests</a>
+                <a class="collapse-item" href="../Pages/about.html">About Us Page</a>
                 <div class="collapse-divider"></div>
 
               

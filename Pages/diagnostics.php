@@ -18,10 +18,8 @@
      }
 ?>
 <!-- 
-     color change on muliple selects class
      text-hierarchy outline
      decide color scheme
-     update dashboard announcement/showing of user level
      -->
 <!DOCTYPE html>
 <html lang="en">
@@ -344,7 +342,7 @@
                </div>
           </section>
           <section class="diag-test send">
-               <form method="post" action="./diagnostics.php" class="final-stage">
+               <form method="post" action="./diag-feedback.php" class="final-stage">
                     <div class="dia-div">
                          <h1>You have completed the Diagnostic Test</h1>
                          <p>Click continue to go to the main page</p>
