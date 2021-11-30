@@ -6,21 +6,24 @@
 
           private $servername = "localhost";
           private $username   = "root";
-          private $password   = "";
-          private $database   = "cread";
+          private $password   = "cenation2";
+          private $database   = "cread2";
           public  $con;
 
-
-          public function __construct()
+          public function
+          __construct()
           {
-               $this->con = new mysqli($this->servername, $this->username, $this->password, $this->database);
-               if (mysqli_connect_error()) {
-                    trigger_error("Failed to connect to MySQL: " . mysqli_connect_errno());
-               } else {
-
-                    return $this->con;
-               }
+      
+      
+              $this->con = new mysqli($this->servername, $this->username, $this->password, $this->database);
+              if (mysqli_connect_error()) {
+                  trigger_error("Failed to connect to MySQL: " . mysqli_connect_errno());
+              } else {
+      
+                  return $this->con;
+              }
           }
+      
 
           public function diagnosis(){
                $score=0;

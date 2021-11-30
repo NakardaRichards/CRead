@@ -16,8 +16,8 @@ class Users
 
     private $servername = "localhost";
     private $username   = "root";
-    private $password   = "";
-    private $database   = "cread";
+    private $password   = "cenation2";
+    private $database   = "cread2";
     public  $con;
 
 
@@ -45,17 +45,15 @@ class Users
 
         $query = "INSERT INTO users(fname,lname,email,pass) VALUES('$fname','$lname','$email','$password')";
         $sql = $this->con->query($query);
-        $row = $sql->fetch_assoc();
 
         if ($sql == true) {
-            // $_SESSION['username'] = $fname;
-            $_SESSION['id'] = $row['id'];
-            $_SESSION['username'] = $row['fname'] . " " . $row['lname'];
-            $_SESSION['class'] = $row['class'];
+            $_SESSION['username'] = $fname;
+
 
 
             // header("Location:../dashboard/dashboard.php");
-            header("Location: ../Pages/diagnostics.php");
+            header("Location:diagnostics.php");
+            
         } else {
             echo "Failed to signup!";
         }
@@ -88,14 +86,6 @@ class Users
         }
     }
     
-    public function diagTestStatus($score){
-        $stid = $_SESSION['id'];
-        // $query = "SELECT * FROM users WHERE id = '$stid'";
-        // $result = $this->con->query($query);
-        // $row = $result->fetch_assoc();
-
-        $status = "INSERT INTO users(diagDone,diagTest) VALUES(true, '$score') WHERE id = '$stid'";
-        $sql = $this->con->query($status);
-    }
+  
 
 }

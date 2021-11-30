@@ -18,8 +18,8 @@
      class tests{
           private $servername = "localhost";
           private $username   = "root";
-          private $password   = "";
-          private $database   = "cread";
+          private $password   = "cenation2";
+          private $database   = "cread2";
           public  $con;
 
 

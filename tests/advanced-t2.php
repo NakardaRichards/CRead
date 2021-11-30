@@ -7,10 +7,10 @@
      $tests = new tests();
      $usersObj = new Users();
 
-     if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
-          header("location: ../Pages/Homepage.html");
-          exit;
-     }
+     // if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
+     //      header("location: ../Pages/Homepage.html");
+     //      exit;
+     // }
 
      if (isset($_POST['send-a-2'])) {
           $score = $tests->test();

@@ -43,9 +43,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-                <a class="collapse-item" href="#">Beginner Tests</a>
-                <a class="collapse-item" href="#">Intermediate Tests</a>
-                <a class="collapse-item" href="#">Advanced Tests</a>
+                <a class="collapse-item" href="../tests/beginner-t1.php">Beginner Tests</a>
+                <a class="collapse-item" href="../tests/intermediate-t1.php">Intermediate Tests</a>
+                <a class="collapse-item" href="../tests/advanced-t1.php">Advanced Tests</a>
                 <div class="collapse-divider"></div>
 
               

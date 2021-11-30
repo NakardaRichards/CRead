@@ -7,10 +7,10 @@
      $tests = new tests();
      $usersObj = new Users();
 
-     if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
-          header("location: ../Pages/Homepage.html");
-          exit;
-     }
+     // if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
+     //      header("location: ../Pages/Homepage.html");
+     //      exit;
+     // }
 
      if (isset($_POST['send-b-3'])) {
           $score = $tests->test();
@@ -49,6 +49,8 @@
                <div class="starter">
                     <p>Choose a suitable letter to complete each word:</p>
                     <div class="start" onclick="nextQ('.ques-1')">Start Test</div>
+                    <br>
+                    <div class="start" > <a href="../dashboard/Dashboard.php" style="text-decoration: none;">Home</div>
                </div>
           </section>
           <section class="quiz ques-1">

@@ -7,10 +7,10 @@
      $tests = new tests();
      $usersObj = new Users();
 
-     if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
-          header("location: ../Pages/Homepage.html");
-          exit;
-     }
+     // if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
+     //      header("location: ../Pages/Homepage.html");
+     //      exit;
+     // }
 
      if (isset($_POST['send-b-2'])) {
           $score = $tests->test();
@@ -59,6 +59,8 @@
                <div class="starter">
                     <p>For questions 1 - 5, choose the <span class="highlight">vowel</span> in each of the following letter groups</p>
                     <div class="start" onclick="nextQ('.ques-1')">Start Test</div>
+                   <br>
+                    <h1>Scroll Down To Continue Test</h1>
                </div>
           </section>
           <section class="quiz ques-1">
@@ -138,6 +140,10 @@
                <div class="starter">
                     <p> For questions 6 - 10, choose all the <span class="highlight">vowel(s)</span> in each of the following words</p>
                     <div class="start" onclick="nextQ('.ques-6')">Continue Test</div>
+
+                    <br>
+                    <div class="start" > <a href="../tests/beginner-t3.php" style="text-decoration: none;"> Next Test</div>
+
                </div>
           </section>
           <section class="quiz ques-6">
@@ -203,6 +209,8 @@
                     <button class="multiple selects" value="e">E</button>
                     <br>
                     <button class="sub-btn" onclick="submit('.ques-10',allChoice)">Next</button>
+
+                    
                     <div class="skip" onclick="submit('.ques-10','')">Skip</div>
                </div>
           </section>

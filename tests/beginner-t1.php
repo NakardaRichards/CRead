@@ -7,10 +7,10 @@
      $tests = new tests();
      $usersObj = new Users();
 
-     if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
-          header("location: ../Pages/Homepage.html");
-          exit;
-     }
+     // if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
+     //      header("location: ../Pages/Homepage.html");
+     //      exit;
+     // }
 
      if (isset($_POST['send-b-1'])) {
           $score = $tests->test();
@@ -48,6 +48,9 @@
                <div class="starter">
                     <p>Fill in the blanks in <span class="highlight">alphabetical order</span> for all 10 questions.</p>
                     <div class="start" onclick="nextQ('.ques-1')">Start Test</div>
+                    <br>
+                    <div class="start" > <a href="../tests/beginner-t2.php" style="text-decoration: none;"> Next Test</div>
+
                </div>
           </section>
           <section class="quiz ques-1">

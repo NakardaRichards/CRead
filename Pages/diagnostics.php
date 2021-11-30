@@ -7,10 +7,10 @@
      $diagnose = new diagnostic();
      $usersObj = new Users();
 
-     if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
-          header("location: ../Pages/Homepage.html");
-          exit;
-     }
+     // if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
+     //      header("location: ../Pages/Homepage.html");
+     //      exit;
+     // }
 
      if (isset($_POST['send'])) {
           $score = $diagnose->diagnosis();
@@ -346,7 +346,7 @@
                </div>
           </section>
           <section class="diag-test send">
-               <form method="post" action="./diagnostics.php" class="final-stage">
+               <form method="post" action="diagnostics.php" class="final-stage">
                     <div class="dia-div">
                          <h1>You have completed the Diagnostic Test</h1>
                          <p>Click continue to go to the main page</p>
