@@ -27,6 +27,7 @@
 
           public function diagnosis(){
                $score=0;
+               $testResult = array();
                for ($x = 1; $x <= 20; $x++) {
                     $a = 'q'.$x;
                     $$a = strtolower($_POST[$a]);
@@ -45,11 +46,19 @@
                          foreach($$a as $val){
                               if(in_array($val,$qArr)) $check++;
                          }
-                         if($check == count($qArr)) $score+=1;
+                         if($check == count($qArr)){
+                              $score += 1;
+                              array_push($testResult,1);
+                         }
                     }
                     elseif($$a == $row['ans'] && $$a != NULL){
                          $score+=1;
+                         array_push($testResult,1);
                     }
+                    else{
+                         array_push($testResult,0);
+                    }
+                    array_push($testResult,$row['ans']);
                }
                
                // echo "Score = ".$score;
@@ -57,7 +66,8 @@
                $status = "UPDATE users SET diagDone = true, diagTest = '$score' WHERE id = '$stid'";
                $sql = $this->con->query($status);
 
-               return $score;
+               array_push($testResult,$score);
+               return $testResult;
           }
 
           public function chooseLesson($score){

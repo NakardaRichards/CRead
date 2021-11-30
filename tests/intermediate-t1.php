@@ -192,7 +192,7 @@
                </div>
           </section>
           <section class="quiz send">
-               <form method="post" action="./intermediate-t1.php" class="final-stage">
+               <form method="post" action="./test-feedback.php" class="final-stage">
                     <div class="quiz-div">
                          <h1>You have completed the Intermediate Test 1</h1>
                          <p>Click continue to go to the main page</p>

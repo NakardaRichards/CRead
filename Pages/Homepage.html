@@ -58,7 +58,7 @@
         <!--Navigation Bar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <div class="container-fluid">
-            <a class="navbar-brand" href="../Pages/Homepage.html">
+            <a class="navbar-brand" href="../dashboard/Dashboard.php">
               <img src="../img/Cread transparent.png" alt="CRead Logo" width="20%" height="20%">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,18 +66,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="../Pages/Homepage.html">Home</a>
-                
-                <a class="nav-link" href="sign-up.php">Sign up</a>
-                <a class="nav-link" href="log-in.php">Login</a>
-                <a class="nav-link" href="about.php">About Us</a>
-                
-               
+                <a class="nav-link" href="../dashboard/Dashboard.php">Home</a>
+                <a class="nav-link active" href="./about.html">About Us</a>
+                <a class="nav-link" href="./log-in.php">Login</a>
+                <a class="nav-link" href="./sign-up.php">Sign up</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Supplementary Material</a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="../Supplemental Material Page/smaterial.html#beginner">Beginner Resources</a></li>
+                    <li><a class="dropdown-item" href="../Supplemental Material Page/smaterial.html#intermediate">Intermediate Resources</a></li>
+                    <li><a class="dropdown-item" href="../Supplemental Material Page/smaterial.html#advanced">Advanced Resources</a></li>
+                  </ul>
+                </li>
+                <a class="nav-link" href="./contact.html">Contact Us</a>
               </div>
             </div>
           </div>
         </nav>
-      </div>
+    </div>
 
       <div id="header">
         <!--Logo and Slogan-->
@@ -86,10 +92,7 @@
           <img src="../img/Cread transparent.png" class="img-fluid " alt="CRead logo">
           <p class="lead"><i>...Advancing the literacy of children globally</i></p>
         </div>
-
       </div>
-
-     
 
       <div class="text-center" id="diagnostic">
         <!--Link to Diagnostic-->
