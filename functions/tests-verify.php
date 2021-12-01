@@ -251,7 +251,7 @@
 
                $testAccPoints=0;
                $userAccPoints=0;
-               if(!$row['beg1']){
+               if(!$row['beg1'] && !$row['interm1'] && !$row['adv1']){
                     $userLevel='Beginner';
                     $userLesson='Your Current Lesson is <span class="highlight">1</span> <br><br><a class="go-to-class" href="../dashboard/beginnerlessons.php">Go To Lesson</a>';
                     $testAccPoints+=10;

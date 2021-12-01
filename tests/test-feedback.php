@@ -61,7 +61,7 @@
      }
      if(isset($_POST['send-a-3'])){
           $sameLesson='<a class="go-to-class" href="../dashboard/advancedlessons3.php">Repeat Lesson</a>';
-          $nextLesson='<a class="go-to-class" href="#">Finish Course (not working yet)</a>';
+          $nextLesson='<a class="go-to-class" href="../Pages/certificate.php">Finish Course</a>';
           $thisTest='Advanced 3';
      }
 ?>
