@@ -45,13 +45,10 @@ class Users
 
         $query = "INSERT INTO users(fname,lname,email,pass) VALUES('$fname','$lname','$email','$password')";
         $sql = $this->con->query($query);
-<<<<<<< HEAD
-=======
 
         $showQuery = "SELECT * FROM users WHERE email ='$email' && pass ='$password'";
         $newsql = $this->con->query($showQuery);
         $row = $newsql->fetch_assoc();
->>>>>>> 5d0cd4be6d6bb6787de54991aff59812e6678ccf
 
         if ($sql == true) {
             $_SESSION['username'] = $fname;
@@ -92,10 +89,4 @@ class Users
             echo "Login failed!";
         }
     }
-<<<<<<< HEAD
-    
-  
-
-=======
->>>>>>> 5d0cd4be6d6bb6787de54991aff59812e6678ccf
 }
