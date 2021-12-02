@@ -53,12 +53,12 @@ if (!isset($_SESSION['id']) || $_SESSION['id'] != true) {
                         <!-- Temporary fix for % overlaying the graph footers for low percentages -->
                         <li style="height: <?php echo ($progress[5]+$progress[6]+$progress[7])/30*100;?>%;"></li> 
                         <li style="height: <?php echo ($progress[8]+$progress[9]+$progress[10])/30*100;?>%;"></li>
-                        <li style="height: <?php echo ($progress[11]+$progress[12]+$progress[13])/10*100;?>%;"></li>
+                        <li style="height: <?php echo ($progress[11]+$progress[12]+$progress[13])/30*100;?>%;"></li>
                     </ul>
                     <ul class="tests-cont">
                         <li><?php echo round((($progress[5]+$progress[6]+$progress[7])/30)*100) .'%';?><br>Beginner</li>
                         <li><?php echo round((($progress[8]+$progress[9]+$progress[10])/30)*100) .'%';?><br>Intermediate</li>
-                        <li><?php echo round((($progress[11]+$progress[12]+$progress[13])/10)*100) .'%';?><br>Advanced</li>
+                        <li><?php echo round((($progress[11]+$progress[12]+$progress[13])/30)*100) .'%';?><br>Advanced</li>
                     </ul>
                     
                 </div>

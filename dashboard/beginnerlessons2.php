@@ -14,6 +14,23 @@
 
 
     <title>Beginner Lessons</title>
+    <style>
+      .go-to-test{
+          margin: 2rem;
+          text-decoration: none;
+          border-radius: 10px;
+          color: white;
+          padding: 0.5rem;
+          background: #ff00c8;
+          transition: 0.5s ease;
+      }
+      .go-to-test:hover{
+          text-decoration: none;
+          color: inherit;
+          background: cyan;
+          transition: 0.5s ease;
+      }
+    </style>
 </head>
 <body>
 <div id="navigationbar">
@@ -28,16 +45,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                
-                
-                <a class="nav-link" href="../dashboard/beginnerlessons.php">Lesson 1</a>
-                <a class="nav-link" href="../dashboard/beginnerlessons2.php">Lesson 2</a>
-                <a class="nav-link" href="../dashboard/beginnerlessons3.php">Lesson 3</a>
-               
-                
-               
-              </div>
+              <a class="nav-link" href="../dashboard/Dashboard.php">Home</a>
+              <a class="nav-link" href="../pages/about.html">About Us</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Supplementary Material</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../Supplemental Material Page/smaterial.html#beginner">Beginner Resources</a></li>
+                  <li><a class="dropdown-item" href="../Supplemental Material Page/smaterial.html#intermediate">Intermediate Resources</a></li>
+                  <li><a class="dropdown-item" href="../Supplemental Material Page/smaterial.html#advanced">Advanced Resources</a></li>
+                </ul>
+              </li>
+              <a class="nav-link" href="../pages/contact.html">Contact Us</a>
             </div>
+          </div>
           </div>
         </nav>
       </div>
@@ -45,17 +65,18 @@
 
       <br>
 <div id="lesson_2" style="text-align: center;">
-    <h1 style="text-align: center;">Lesson 2: Vowels</h1>
+    <h1 style="text-align: center;">Beginner Lesson 2: Vowels</h1>
     
 <iframe  width="400px" height="300px" style="border:2px solid red; margin:15px" src="https://www.youtube.com/embed/a2IOZyAXF1M" title="Lesson 1: The Alphabet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 
 <iframe  width="400px" height="300px" style="border:2px solid red;  margin:15px" src="https://www.youtube.com/embed/jPfAoq-16T8" title="Lesson 1: The Alphabet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+  <br><a class="go-to-test" href="../tests/beginner-t2.php">Go To Test</a> 
 </div>
 
 
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 </html>

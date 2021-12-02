@@ -515,7 +515,7 @@
      <section>
           <h3>Test Score</h3>
           <div>
-               <p>You received a score of <span class="highlight"><?php echo $testResult[40]; ?></span> out of <span class="highlight">10</span></p>
+               <p>You received a score of <span class="highlight"><?php echo $testResult[40]; ?></span> out of <span class="highlight">20</span></p>
           </div>
      </section>
      <section>
@@ -541,7 +541,8 @@
      <section class="user-route">
           <div>
                <?php
-                    echo $nextLesson.'<a class="go-to-class" href="../dashboard/dashboard.php">Go to Dashboard</a>';
+                    // echo $nextLesson.'<a class="go-to-class" href="../dashboard/dashboard.php">Go to Dashboard</a>';
+                    echo $nextLesson;
                ?>
           </div>
      </section>
