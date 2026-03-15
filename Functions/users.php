@@ -1,92 +1,95 @@
 <?php
-
 if (!isset($_SESSION)) {
     session_start();
 }
 
-
-
-
-
-
-
-
 class Users
 {
-
-    private $servername = "localhost";
-    private $username   = "root";
-    private $password   = "";
-    private $database   = "cread2";
+    private $servername;
+    private $username;
+    private $password;
+    private $database;
     public  $con;
 
-
-    public function
-    __construct()
+    public function __construct()
     {
+        // Load environment variables
+        $this->servername = getenv('DB_HOST');
+        $this->username   = getenv('DB_USER');
+        $this->password   = getenv('DB_PASS');
+        $this->database   = getenv('DB_NAME');
 
+        if (!$this->servername || !$this->username || !$this->database) {
+            die("Database environment variables are not set!");
+        }
 
-        $this->con = new mysqli($this->servername, $this->username, $this->password, $this->database);
-        if (mysqli_connect_error()) {
-            trigger_error("Failed to connect to MySQL: " . mysqli_connect_errno());
-        } else {
+        // Connect to MySQL using mysqli
+        $this->con = new mysqli(
+            $this->servername,
+            $this->username,
+            $this->password,
+            $this->database
+        );
 
-            return $this->con;
+        if ($this->con->connect_error) {
+            die("Failed to connect to MySQL: " . $this->con->connect_error);
         }
     }
-
 
     public function signupData($post)
     {
-        $fname = $this->con->real_escape_string($_POST['fname']);
-        $lname = $this->con->real_escape_string($_POST['lname']);
-        $email = $this->con->real_escape_string($_POST['email']);
-        $password = $this->con->real_escape_string($_POST['pass']);
+        $fname = trim($post['fname'] ?? '');
+        $lname = trim($post['lname'] ?? '');
+        $email = trim($post['email'] ?? '');
+        $password = trim($post['pass'] ?? '');
 
-        $query = "INSERT INTO users(fname,lname,email,pass) VALUES('$fname','$lname','$email','$password')";
-        $sql = $this->con->query($query);
+        if (!$fname || !$lname || !$email || !$password) {
+            return "All fields are required!";
+        }
 
-        $showQuery = "SELECT * FROM users WHERE email ='$email' && pass ='$password'";
-        $newsql = $this->con->query($showQuery);
-        $row = $newsql->fetch_assoc();
+        // Hash the password before storing
+        $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-        if ($sql == true) {
+        // Use prepared statement to prevent SQL injection
+        $stmt = $this->con->prepare(
+            "INSERT INTO users (fname, lname, email, pass) VALUES (?, ?, ?, ?)"
+        );
+        $stmt->bind_param("ssss", $fname, $lname, $email, $passwordHash);
+
+        if ($stmt->execute()) {
             $_SESSION['username'] = $fname;
-
-
-
-            // header("Location:../dashboard/dashboard.php");
-            header("Location:diagnostics.php");
-            
+            header("Location: diagnostics.php");
+            exit;
         } else {
-            echo "Failed to signup!";
+            return "Failed to signup: " . $stmt->error;
         }
     }
 
-
     public function loginData($post)
     {
+        $email = trim($post['email'] ?? '');
+        $password = trim($post['pass'] ?? '');
 
-        $email = $this->con->real_escape_string($_POST['email']);
+        if (!$email || !$password) {
+            return "Email and password are required!";
+        }
 
-        $password = $this->con->real_escape_string($_POST['pass']);
+        // Use prepared statement
+        $stmt = $this->con->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
 
-        $query = "SELECT * FROM users WHERE email ='$email' && pass ='$password'";
-
-
-
-        $result = $this->con->query($query);
+        $result = $stmt->get_result();
         $row = $result->fetch_assoc();
 
-
-        if ($result->num_rows > 0) {
-
+        if ($row && password_verify($password, $row['pass'])) {
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['fname'] . " " . $row['lname'];
-            $_SESSION['class'] = $row['class'];
-            header("Location:../dashboard/dashboard.php");
+            $_SESSION['class'] = $row['class'] ?? null;
+            header("Location: ../dashboard/dashboard.php");
+            exit;
         } else {
-            echo "Login failed!";
+            return "Login failed: Invalid email or password!";
         }
     }
 }
